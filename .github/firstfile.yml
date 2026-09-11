@@ -34,21 +34,28 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-      - name: say hello
+
+      - name : checkout code
+        uses: actions/checkout@v4
+      - name: test job
         run: echo "Testing .......... "
 
   security:
     runs-on: ubuntu-latest
     steps:
+
+      - name : checkout code
+        uses: actions/checkout@v4
+
       - name: security jobs
         run: echo "this is the security job"
   
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
+ # deploy:
+   # needs: test
+   # runs-on: ubuntu-latest
 
-    steps:
-      - run: echo "deploying application"
+  #  steps:
+  #    - run: echo "deploying application"
 
 
 

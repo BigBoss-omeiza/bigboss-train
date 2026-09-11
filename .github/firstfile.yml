@@ -1,0 +1,57 @@
+name: Build and Deploy Application
+
+on:
+
+  push:
+
+    #branches: [ main, develop]
+    
+    #path_ignore:
+    ##  - '**.md'
+     # - 'docs/**'
+  
+  #pull_request:
+   # branches: [main]
+    #paths:
+     
+    #- 'src/**'
+    #- 'package.json'
+    #- 'package-lock.json'
+
+  #workflow_dispatch:
+    inputs:
+      environment:
+        description: 'where to deploy' 
+        required: true 
+        default: 'staging'
+        type: choice
+        options: [staging, production]
+#env: 
+  NODE_VERSION: '18'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: say hello
+        run: echo "Testing .......... "y
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: security jobs
+        run: echo "this is the security job"
+  
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "deploying application"
+
+
+
+
+
+

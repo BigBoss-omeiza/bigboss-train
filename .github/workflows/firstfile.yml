@@ -19,15 +19,15 @@ on:
     #- 'package-lock.json'
 
   #workflow_dispatch:
-    inputs:
-      environment:
-        description: 'where to deploy' 
-        required: true 
-        default: 'staging'
-        type: choice
-        options: [staging, production]
+   # inputs:
+     # environment:
+       # description: 'where to deploy' 
+       # required: true 
+       # default: 'staging'
+       # type: choice
+       # options: [staging, production]
 #env: 
-  NODE_VERSION: '18'
+  #NODE_VERSION: '18'
 
 jobs:
   test:
